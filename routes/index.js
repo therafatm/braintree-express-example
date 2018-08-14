@@ -68,6 +68,8 @@ router.get('/checkouts/:id', function (req, res) {
 });
 
 router.post('/checkouts', function (req, res) {
+  console.log("Hey bro what is the money")
+  console.log("Money is " + req.body.amount)
   var transactionErrors;
   var amount = req.body.amount; // In production you should not take amounts directly from clients
   var nonce = req.body.payment_method_nonce;
@@ -80,6 +82,7 @@ router.post('/checkouts', function (req, res) {
     }
   }, function (err, result) {
     if (result.success || result.transaction) {
+      console.log("it works")
       res.redirect('checkouts/' + result.transaction.id);
     } else {
       transactionErrors = result.errors.deepErrors();

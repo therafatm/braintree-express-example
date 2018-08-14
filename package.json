@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "test": "npm run lint && mocha"
   },
   "devDependencies": {
@@ -12,6 +12,7 @@
     "eslint": "2.7.0",
     "eslint-config-braintree": "^1.0.1",
     "mocha": "~2.3.3",
+    "nodemon": "^1.18.3",
     "superagent": "~1.4.0",
     "supertest": "~1.1.0"
   },
